@@ -49,10 +49,14 @@ output:
 - Ranging over channels in Go is a convenient way to continuously receive values from a channel until it is closed. This is particularly useful in concurrent programming when you want to process a series of values sent 
   from multiple goroutines.
 
+
+
 **sync.Mutex**
 - A Mutex is a mutual exclusion lock.
 - Only one goroutine can hold the lock at a time, whether it is for reading or writing.
 - All other goroutines attempting to acquire the lock will be blocked until the lock is released.
+
+
 
 **sync.RWMutex**
 - A RWMutex is a reader/writer mutual exclusion lock.
@@ -61,10 +65,14 @@ output:
 - Only one goroutine can hold the write lock, and no other locks (read or write) can be held at the same time.
 - This allows multiple readers to access the resource concurrently, increasing the efficiency of read-heavy workloads.
 
+
+
 **Benefits of sync.RWMutex**
 - Improved Concurrency for Read-Heavy Workloads: When there are multiple readers and infrequent writers, RWMutex allows multiple readers to access the resource simultaneously, improving throughput and reducing contention.
 - Separation of Read and Write Locks: By distinguishing between read and write operations, RWMutex provides a more fine-grained locking mechanism, which can lead to better performance in scenarios where reads vastly     
   outnumber writes.
+
+
 
 **SQL stuff**
 
@@ -78,6 +86,7 @@ output:
 - If a conflict occurs (i.e., a row with the same key already exists), this part of the query specifies that PostgreSQL should update the existing row.
 - EXCLUDED is a special table reference used in the ON CONFLICT clause. It represents the row that was attempted to be inserted but caused the conflict.
 - value = EXCLUDED.value means that the value column of the existing row should be updated to the value from the row that caused the conflict.
+
 
 
 **request stuff**
