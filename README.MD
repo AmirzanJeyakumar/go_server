@@ -1,4 +1,4 @@
-# simple web server written in Go to explore concepts
+# notes
 
 ## concepts
 
