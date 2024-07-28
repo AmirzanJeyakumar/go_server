@@ -38,9 +38,9 @@ output:
     GET /postgres/get for key greeting completed in 625.46µs
 ```
 
-General Interpretation
-Performance: In-memory operations are faster due to their direct nature and lack of I/O operations. Database operations, while slower, offer persistence and scalability.
-Latency Differences: The latency difference between in-memory and database operations highlights the trade-offs between speed and durability. In-memory stores are ideal for temporary or high-speed needs, while databases are suited for reliable, persistent storage
+**interpretation**
+- Performance: In-memory operations are faster due to their direct nature and lack of I/O operations. Database operations, while slower, offer persistence and scalability.
+- Latency Differences: The latency difference between in-memory and database operations highlights the trade-offs between speed and durability. In-memory stores are ideal for temporary or high-speed needs, while databases are suited for reliable, persistent storage
 
 
 ### things i found interesting
