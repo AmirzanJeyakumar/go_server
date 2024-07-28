@@ -50,20 +50,21 @@ output:
 - Using sync.RWMutex instead of sync.Mutex allows for more efficient concurrent access to shared resources when there are frequent read operations and fewer write operations. Let's delve into the differences and benefits:
 
 **sync.Mutex**
-A Mutex is a mutual exclusion lock.
-Only one goroutine can hold the lock at a time, whether it is for reading or writing.
-All other goroutines attempting to acquire the lock will be blocked until the lock is released.
+- A Mutex is a mutual exclusion lock.
+- Only one goroutine can hold the lock at a time, whether it is for reading or writing.
+- All other goroutines attempting to acquire the lock will be blocked until the lock is released.
 
 **sync.RWMutex**
-An RWMutex is a reader/writer mutual exclusion lock.
-It has two types of locks: read locks (RLock) and write locks (Lock).
-Multiple goroutines can hold a read lock simultaneously, as long as there are no write locks held.
-Only one goroutine can hold the write lock, and no other locks (read or write) can be held at the same time.
-This allows multiple readers to access the resource concurrently, increasing the efficiency of read-heavy workloads.
+- A RWMutex is a reader/writer mutual exclusion lock.
+- It has two types of locks: read locks (RLock) and write locks (Lock).
+- Multiple goroutines can hold a read lock simultaneously, as long as there are no write locks held.
+- Only one goroutine can hold the write lock, and no other locks (read or write) can be held at the same time.
+- This allows multiple readers to access the resource concurrently, increasing the efficiency of read-heavy workloads.
 
 **Benefits of sync.RWMutex**
-Improved Concurrency for Read-Heavy Workloads: When there are multiple readers and infrequent writers, RWMutex allows multiple readers to access the resource simultaneously, improving throughput and reducing contention.
-Separation of Read and Write Locks: By distinguishing between read and write operations, RWMutex provides a more fine-grained locking mechanism, which can lead to better performance in scenarios where reads vastly outnumber writes.
+- Improved Concurrency for Read-Heavy Workloads: When there are multiple readers and infrequent writers, RWMutex allows multiple readers to access the resource simultaneously, improving throughput and reducing contention.
+- Separation of Read and Write Locks: By distinguishing between read and write operations, RWMutex provides a more fine-grained locking mechanism, which can lead to better performance in scenarios where reads vastly     
+  outnumber writes.
 
 - SQL stuff
 
