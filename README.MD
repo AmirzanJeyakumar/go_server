@@ -45,9 +45,8 @@ output:
 
 ### things i found interesting
 
-- Ranging over channels in Go is a convenient way to continuously receive values from a channel until it is closed. This is particularly useful in concurrent programming when you want to process a series of values sent from multiple goroutines.
-
-- Using sync.RWMutex instead of sync.Mutex allows for more efficient concurrent access to shared resources when there are frequent read operations and fewer write operations. Let's delve into the differences and benefits:
+**Channels**
+Ranging over channels in Go is a convenient way to continuously receive values from a channel until it is closed. This is particularly useful in concurrent programming when you want to process a series of values sent from multiple goroutines.
 
 **sync.Mutex**
 - A Mutex is a mutual exclusion lock.
@@ -66,7 +65,7 @@ output:
 - Separation of Read and Write Locks: By distinguishing between read and write operations, RWMutex provides a more fine-grained locking mechanism, which can lead to better performance in scenarios where reads vastly     
   outnumber writes.
 
-- SQL stuff
+**SQL stuff**
 
 `ON CONFLICT (key)`
 
@@ -80,7 +79,7 @@ EXCLUDED is a special table reference used in the ON CONFLICT clause. It represe
 value = EXCLUDED.value means that the value column of the existing row should be updated to the value from the row that caused the conflict.
 
 
-- request stuff
+**request stuff**
 
 ```
 w.Header().Set("Content-Type", "application/json")
