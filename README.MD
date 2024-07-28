@@ -46,7 +46,8 @@ output:
 ### things i found interesting
 
 **Channels**
-Ranging over channels in Go is a convenient way to continuously receive values from a channel until it is closed. This is particularly useful in concurrent programming when you want to process a series of values sent from multiple goroutines.
+- Ranging over channels in Go is a convenient way to continuously receive values from a channel until it is closed. This is particularly useful in concurrent programming when you want to process a series of values sent 
+  from multiple goroutines.
 
 **sync.Mutex**
 - A Mutex is a mutual exclusion lock.
@@ -69,14 +70,14 @@ Ranging over channels in Go is a convenient way to continuously receive values f
 
 `ON CONFLICT (key)`
 
-This clause specifies how to handle a conflict that occurs when an attempt is made to insert a row with a key value that already exists in the table.
-In PostgreSQL, ON CONFLICT allows you to define an action to take if the insert would violate a unique constraint (in this case, a conflict on the key).
+- This clause specifies how to handle a conflict that occurs when an attempt is made to insert a row with a key value that already exists in the table.
+- In PostgreSQL, ON CONFLICT allows you to define an action to take if the insert would violate a unique constraint (in this case, a conflict on the key).
 
 `DO UPDATE SET value = EXCLUDED.value`
 
-If a conflict occurs (i.e., a row with the same key already exists), this part of the query specifies that PostgreSQL should update the existing row.
-EXCLUDED is a special table reference used in the ON CONFLICT clause. It represents the row that was attempted to be inserted but caused the conflict.
-value = EXCLUDED.value means that the value column of the existing row should be updated to the value from the row that caused the conflict.
+- If a conflict occurs (i.e., a row with the same key already exists), this part of the query specifies that PostgreSQL should update the existing row.
+- EXCLUDED is a special table reference used in the ON CONFLICT clause. It represents the row that was attempted to be inserted but caused the conflict.
+- value = EXCLUDED.value means that the value column of the existing row should be updated to the value from the row that caused the conflict.
 
 
 **request stuff**
@@ -86,5 +87,6 @@ w.Header().Set("Content-Type", "application/json")
 json.NewEncoder(w).Encode(map[string]string{"value": value})
 ```
 
-The Content-Type header informs the client about the type of content that is being returned. Setting this to application/json tells the client (such as a web browser or a REST client) that the response body contains JSON data.
-The Encode method writes the serialized JSON directly to the response body. This means the client will receive the data as a JSON object, which is a standard format for RESTful APIs.
+- The Content-Type header informs the client about the type of content that is being returned. Setting this to application/json tells the client (such as a web browser or a REST client) that the response body contains 
+  JSON data.
+- The Encode method writes the serialized JSON directly to the response body. This means the client will receive the data as a JSON object, which is a standard format for RESTful APIs.
